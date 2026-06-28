@@ -1,15 +1,21 @@
 import SwiftUI
 
 enum ZleppuTheme {
-    static let navy = Color(hex: 0x22272E)
-    static let slate = Color(hex: 0x2D3A4B)
-    static let background = Color(hex: 0xF7F8FA)
-    static let peach = Color(hex: 0xFFE6D3)
-    static let sunriseOrange = Color(hex: 0xFF9B63)
-    static let lavender = Color(hex: 0xD7D8FF)
-    static let chatBlue = Color(hex: 0xD0DBFF)
-    static let textPrimary = Color(hex: 0x22272E)
-    static let textSecondary = Color(hex: 0x6B7280)
+    // Logo purple palette
+    static let purple = Color(hex: 0x2E2980)
+    static let purpleLight = Color(hex: 0x5B52A8)
+    static let purpleSoft = Color(hex: 0x8B82C9)
+    static let cream = Color(hex: 0xFFF5E6)
+
+    static let navy = Color(hex: 0x2E2980)
+    static let slate = Color(hex: 0x4A4585)
+    static let background = Color(hex: 0xFAF8F5)
+    static let peach = Color(hex: 0xEDE8F5)
+    static let sunriseOrange = Color(hex: 0x5B52A8)
+    static let lavender = Color(hex: 0xD4CCF0)
+    static let chatBlue = Color(hex: 0xE4E0F5)
+    static let textPrimary = Color(hex: 0x2A2640)
+    static let textSecondary = Color(hex: 0x6B667A)
     static let surface = Color.white
     static let danger = Color(hex: 0xFF6B6B)
 
@@ -31,7 +37,7 @@ extension Color {
 }
 
 struct ZleppuPrimaryButtonStyle: ButtonStyle {
-    var background: Color = ZleppuTheme.navy
+    var background: Color = ZleppuTheme.purple
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

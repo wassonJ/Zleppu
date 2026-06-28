@@ -71,14 +71,14 @@ struct HomeView: View {
                     RoundedRectangle(cornerRadius: 14, style: .continuous)
                         .fill(
                             LinearGradient(
-                                colors: [ZleppuTheme.sunriseOrange, ZleppuTheme.peach],
+                                colors: [ZleppuTheme.purpleLight, ZleppuTheme.lavender],
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             )
                         )
                         .frame(width: 72, height: 72)
                         .overlay {
-                            Image(systemName: "sun.horizon.fill")
+                            Image(systemName: "moon.stars.fill")
                                 .font(.title2)
                                 .foregroundStyle(.white)
                         }
@@ -135,11 +135,11 @@ struct HomeView: View {
         } label: {
             HStack(spacing: 14) {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .fill(ZleppuTheme.peach.opacity(0.7))
+                    .fill(ZleppuTheme.lavender.opacity(0.55))
                     .frame(width: 48, height: 48)
                     .overlay {
                         Image(systemName: "alarm.fill")
-                            .foregroundStyle(ZleppuTheme.sunriseOrange)
+                            .foregroundStyle(ZleppuTheme.purple)
                     }
 
                 VStack(alignment: .leading, spacing: 4) {

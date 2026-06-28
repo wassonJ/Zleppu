@@ -10,7 +10,7 @@ struct LandingView: View {
             VStack {
                 Spacer()
 
-                ZleppuLogo(size: 72, light: true)
+                ZleppuLogo(size: 120, light: true, showWordmark: true)
 
                 Text("Wake up together.\nStay consistent.")
                     .font(.title3)

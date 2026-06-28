@@ -46,8 +46,8 @@ struct AlarmsView: View {
                 Text(time)
                     .font(.system(size: 36, weight: .bold, design: .rounded))
                 Spacer()
-                Image(systemName: "sunrise.fill")
-                    .foregroundStyle(ZleppuTheme.sunriseOrange)
+                Image(systemName: "moon.stars.fill")
+                    .foregroundStyle(ZleppuTheme.purpleLight)
             }
 
             Text(title)

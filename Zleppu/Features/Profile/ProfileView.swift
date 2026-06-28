@@ -80,7 +80,7 @@ struct ProfileView: View {
     private var proBadge: some View {
         HStack {
             Image(systemName: auth.isGuest ? "person.fill.questionmark" : "crown.fill")
-                .foregroundStyle(auth.isGuest ? ZleppuTheme.slate : ZleppuTheme.sunriseOrange)
+                .foregroundStyle(auth.isGuest ? ZleppuTheme.slate : ZleppuTheme.purpleLight)
             Text(auth.isGuest ? "Guest mode · demo data only" : "Pro Active")
                 .font(.headline)
             Spacer()

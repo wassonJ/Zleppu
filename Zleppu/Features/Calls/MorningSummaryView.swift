@@ -28,7 +28,7 @@ struct MorningSummaryView: View {
                         Spacer()
                         Text("07:00")
                             .font(.headline)
-                            .foregroundStyle(ZleppuTheme.sunriseOrange)
+                            .foregroundStyle(ZleppuTheme.purpleLight)
                     }
 
                     ForEach(members, id: \.0) { member in

@@ -3,30 +3,23 @@ import SwiftUI
 struct ZleppuLogo: View {
     var size: CGFloat = 64
     var light: Bool = false
+    var showWordmark: Bool = true
 
     var body: some View {
         VStack(spacing: 10) {
-            ZStack {
-                Circle()
-                    .fill(
-                        LinearGradient(
-                            colors: [ZleppuTheme.sunriseOrange, ZleppuTheme.peach],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                    .frame(width: size, height: size)
+            Image("AppLogo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: size, height: size)
+                .clipShape(RoundedRectangle(cornerRadius: size * 0.22, style: .continuous))
+                .shadow(color: .black.opacity(light ? 0.15 : 0.08), radius: 8, y: 4)
 
-                Image(systemName: "sun.max.fill")
-                    .font(.system(size: size * 0.42))
-                    .foregroundStyle(.white)
-                    .offset(y: -2)
+            if showWordmark {
+                Text("zleppu")
+                    .font(.system(size: size * 0.38, weight: .semibold, design: .rounded))
+                    .foregroundStyle(light ? .white : ZleppuTheme.textPrimary)
+                    .tracking(0.5)
             }
-
-            Text("zleppu")
-                .font(.system(size: size * 0.45, weight: .semibold, design: .rounded))
-                .foregroundStyle(light ? .white : ZleppuTheme.textPrimary)
-                .tracking(0.5)
         }
     }
 }
@@ -39,21 +32,21 @@ struct SunriseBackground: View {
         ZStack {
             LinearGradient(
                 colors: [
-                    Color(hex: 0xFFD4A8),
-                    Color(hex: 0xFF9B63),
-                    Color(hex: 0xE8875A),
-                    Color(hex: 0x6B8FA8),
-                    Color(hex: 0x2D3A4B)
+                    ZleppuTheme.cream,
+                    Color(hex: 0xE8E2F8),
+                    ZleppuTheme.purpleLight,
+                    ZleppuTheme.purple,
+                    Color(hex: 0x1E1A55)
                 ],
                 startPoint: .top,
                 endPoint: .bottom
             )
 
             RadialGradient(
-                colors: [.white.opacity(0.45), .clear],
-                center: .init(x: 0.5, y: 0.18),
+                colors: [Color.white.opacity(0.35), .clear],
+                center: .init(x: 0.5, y: 0.15),
                 startRadius: 10,
-                endRadius: 220
+                endRadius: 240
             )
         }
         .blur(radius: blur ? 12 : 0)
@@ -70,7 +63,7 @@ struct AvatarView: View {
     var body: some View {
         Text(initials)
             .font(.system(size: size * 0.34, weight: .semibold))
-            .foregroundStyle(ZleppuTheme.slate)
+            .foregroundStyle(ZleppuTheme.purple)
             .frame(width: size, height: size)
             .background(color)
             .clipShape(Circle())
@@ -122,12 +115,13 @@ struct StatCard: View {
 struct SettingsRow: View {
     let icon: String
     let title: String
+    var showChevron: Bool = true
 
     var body: some View {
         HStack(spacing: 14) {
             Image(systemName: icon)
                 .font(.body)
-                .foregroundStyle(ZleppuTheme.slate)
+                .foregroundStyle(ZleppuTheme.purple)
                 .frame(width: 24)
 
             Text(title)
@@ -136,11 +130,13 @@ struct SettingsRow: View {
 
             Spacer()
 
-            Image(systemName: "chevron.right")
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(ZleppuTheme.textSecondary)
+            if showChevron {
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(ZleppuTheme.textSecondary)
+            }
         }
-        .padding(.horizontal, 18)
-        .padding(.vertical, 16)
+        .padding(.horizontal, 4)
+        .padding(.vertical, 4)
     }
 }
