@@ -1,0 +1,33 @@
+# Xcode
+.build/
+DerivedData/
+.derivedData/
+*.xcuserstate
+*.xcuserdatad/
+xcuserdata/
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# macOS
+.DS_Store
+*.swp
+*~
+
+# Archives & exports
+*.zip
+
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+
+# CocoaPods (if added later)
+Pods/
+
+# Secrets — never commit
+.env
+*.pem
